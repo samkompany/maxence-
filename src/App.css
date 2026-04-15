@@ -1,0 +1,164 @@
+/* App-specific styles */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero section enhancements */
+.hero-image {
+  will-change: clip-path, transform, opacity;
+}
+
+/* Service card image hover effect */
+.service-card img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Stat card hover effect */
+.stat-card {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+}
+
+/* Why us card hover */
+.group:hover .w-14 {
+  transform: scale(1.05);
+}
+
+/* Form input focus animation */
+.form-input {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.form-input:focus {
+  transform: translateY(-2px);
+}
+
+/* Button hover effects */
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-outline:active {
+  transform: translateY(0);
+}
+
+/* Navigation link underline animation */
+.nav-link::after {
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Mobile menu animation */
+.md\:hidden.absolute {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Parallax effect for hero image */
+@media (min-width: 1024px) {
+  .hero-image {
+    transform: translateY(var(--parallax-y, 0));
+  }
+}
+
+/* Section reveal animation */
+.animate-section {
+  opacity: 1;
+}
+
+/* Counter animation */
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Floating card animation */
+@keyframes float-card {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.bg-white.rounded-xl.p-4.shadow-soft {
+  animation: float-card 4s ease-in-out infinite;
+}
+
+/* Glow effect for buttons */
+.btn-primary:hover {
+  box-shadow: 0 10px 30px -10px rgba(224, 149, 91, 0.5);
+}
+
+/* Image overlay gradient */
+.image-overlay {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(31, 31, 31, 0.4) 100%
+  );
+}
+
+/* Responsive typography adjustments */
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+}
+
+/* Loading state for images */
+img {
+  background-color: #f3f4f6;
+}
+
+/* Focus visible styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #e0955b;
+  outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  nav,
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    display: none !important;
+  }
+  
+  section {
+    break-inside: avoid;
+  }
+}
